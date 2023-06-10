@@ -14,12 +14,13 @@
               nieformalnym stylem komunikacji. Od skrótów typu "YOLO" (You Only Live Once) po unikalne wyrazy jak
               "chillować" (odpoczywać), ten słownik odzwierciedla dynamiczną i nieustannie ewoluującą naturę języka ulicy.
             </p>
-            <a class="text-emerald-500 inline-flex items-center">Losuj słowo
-              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                <path d="M5 12h14M12 5l7 7-7 7"></path>
+            <RouterLink :to="'/about'" class="text-emerald-500 inline-flex items-center">Napędzane przez chatGPT<svg
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"></path>
               </svg>
-            </a>
+            </RouterLink>
           </div>
         </div>
       </div>
