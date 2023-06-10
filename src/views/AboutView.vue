@@ -33,3 +33,7 @@
     </div>
   </section>
 </template>
+
+<script>
+document.title = this.word.word + 'O nas | Ściek'
+</script>

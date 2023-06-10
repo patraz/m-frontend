@@ -12,7 +12,6 @@
 
 <script>
 
-import axios from 'axios'
 
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
@@ -23,17 +22,7 @@ export default {
     Nav,
     Footer
   },
-  // beforeCreate() {
-  //   this.$store.commit('initializeStore')
 
-  //   const token = this.$store.state.user.token
-
-  //   if (token) {
-  //     axios.defaults.headers.common['Authorization'] = "Token " + token
-  //   } else {
-  //     axios.defaults.headers.common['Authorization'] = ""
-  //   }
-  // }
 }
-
+document.title = 'Strona główna | Ściek'
 </script>

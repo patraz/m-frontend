@@ -30,7 +30,7 @@ export default {
 
         this.getWord()
 
-        document.title = this.word.word + ' | Ściek'
+        
     },
     methods: {
         async getWord(){
@@ -41,7 +41,9 @@ export default {
                 .then(response => {
                     console.log(response.data)
                     this.word = response.data
+                    document.title = this.word.word + ' | Ściek'
                 })
+            
         }
     }
   }
