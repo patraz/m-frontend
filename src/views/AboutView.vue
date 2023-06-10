@@ -35,5 +35,5 @@
 </template>
 
 <script>
-document.title = this.word.word + 'O nas | Ściek'
+document.title = 'O nas | Ściek'
 </script>
