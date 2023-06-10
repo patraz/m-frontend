@@ -1,6 +1,6 @@
 <template>
   <section class="bg-gradient-to-b from-neutral-900 to-neutral-800 text-white body-font">
-    <div class="container px-5 py-24 mx-auto flex flex-col">
+    <div class="container px-5 py-8 md:py-24 mx-auto flex flex-col">
       <div class="lg:w-4/6 mx-auto">
 
         <div class="flex flex-col sm:flex-row mt-10">
