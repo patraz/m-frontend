@@ -26,7 +26,7 @@
                                 </a>
                             </li>
                             <li v-for="page in paginator.pages" :key="paginator.pages">
-                                <a @click="getNumber(page)"
+                                <a @click="getNumber(page, this.letter)"
                                 
                                  class=" px-3 py-1 font-bold text-emerald-500 bg-gray rounded-lg border border-gray-300 hover:bg-emerald-700 hover:text-white"
                                  :class="{'ring-2 ring-emerald-300': isActive(page)}"
@@ -81,6 +81,7 @@ export default {
             words: [],
             paginator: {},
             activePage: null,
+            letter: null,
         }
     },
     mounted() {
@@ -107,7 +108,10 @@ export default {
                     this.paginator = response.data
                     this.words = response.data.results
                     this.current = response.data.current
+                    this.letter = letter
+                    this.activePage = null
                     document.title = 'Definicje | Ściek'
+
                 })
 
         },
@@ -143,10 +147,10 @@ export default {
                 })
             }
         },
-        async getNumber(page) {
+        async getNumber(page, letter) {
             http://127.0.0.1:8000/api/v1/definitions/dict/a/?page=2
             await axios 
-            .get('/api/v1/definitions/dict/a/', { params: { page: page } })
+            .get(`/api/v1/definitions/dict/${letter}}/`, { params: { page: page } })
             .then(response => {
                 this.activePage = page
                 console.log(response.data)
