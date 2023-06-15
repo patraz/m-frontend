@@ -149,6 +149,7 @@ export default {
         },
         async getNumber(page, letter) {
             http://127.0.0.1:8000/api/v1/definitions/dict/a/?page=2
+            console.log(letter)
             await axios 
             .get(`/api/v1/definitions/dict/${letter}}/`, { params: { page: page } })
             .then(response => {
