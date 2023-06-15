@@ -151,7 +151,7 @@ export default {
             http://127.0.0.1:8000/api/v1/definitions/dict/a/?page=2
             console.log(letter)
             await axios 
-            .get(`/api/v1/definitions/dict/${letter}}/`, { params: { page: page } })
+            .get(`/api/v1/definitions/dict/${letter}/`, { params: { page: page } })
             .then(response => {
                 this.activePage = page
                 console.log(response.data)
