@@ -4,7 +4,7 @@
             <div class="lg:w-4/6 mx-auto text-center">
                 <div class="flex flex-col sm:flex-row mt-10">
                     <ul class="flex flex-wrap items-center justify-center mb-6 text-emerald-400 dark:text-white">
-                        <li v-for="letter in letters" :key="letter">
+                        <li v-for="letter in letters" :key="letter" @click="getWordsFromClick(letter)">
                             <RouterLink
                                 class="relative inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-emerald-700 rounded-lg hover:bg-emerald-800 focus:ring-2 focus:outline-none focus:ring-emerald-300 dark:bg-emerald-600 dark:hover:bg-emerald-700 dark:focus:ring-emerald-800 m-2"
                                 :to="'/definitions/' + letter">{{ letter }}</RouterLink>
@@ -90,6 +90,18 @@ export default {
         async getWords() {
             await axios
                 .get(`/api/v1/definitions/dict/a/`)
+                .then(response => {
+                    console.log(response.data)
+                    this.paginator = response.data
+                    this.words = response.data.results
+                    this.current = response.data.current
+                    document.title = 'Definicje | Ściek'
+                })
+
+        },
+        async getWordsFromClick(letter) {
+            await axios
+                .get(`/api/v1/definitions/dict/${letter}/`)
                 .then(response => {
                     console.log(response.data)
                     this.paginator = response.data
