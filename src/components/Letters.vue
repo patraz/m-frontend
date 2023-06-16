@@ -96,6 +96,7 @@ export default {
                     this.words = response.data.results
                     this.current = response.data.current
                     this.letter = 'a'
+                    this.activePage = 1
                     document.title = 'Definicje | Ściek'
                 })
 
