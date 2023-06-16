@@ -109,7 +109,7 @@ export default {
                     this.words = response.data.results
                     this.current = response.data.current
                     this.letter = letter
-                    this.activePage = null
+                    this.activePage = 1
 
                 })
 
