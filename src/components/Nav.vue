@@ -39,6 +39,7 @@
             <nav id="nav-menu-options" class="lg:hidden w-full bg-neutral-900 z-20 top-12 hidden">
                 <a @click="random()"
                     class="block text-center text-emerald-400  text-l border-b-2 border-emerald-700 py-3 hover:text-emerald-900">Losuj słowo</a>
+                <RouterLink :to="'/definitions/a'" class="block text-emerald-400 text-center hover:text-emerald-900 text-l border-b-2 border-emerald-700 py-3">Wszytkie słowa</RouterLink>
                 <RouterLink :to="'/about'" class="block text-emerald-400 text-center hover:text-emerald-900 text-l border-b-2 border-emerald-700 py-3">O
                             nas</RouterLink>
             </nav>
@@ -114,7 +115,6 @@ export default {
             }
         },
         toggleMenu() {
-            console.log('hejo')
             let menu = document.getElementById('nav-menu-options')
             menu.classList.toggle("hidden")
         }

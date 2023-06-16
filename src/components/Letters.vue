@@ -92,10 +92,10 @@ export default {
             await axios
                 .get(`/api/v1/definitions/dict/a/`)
                 .then(response => {
-                    console.log(response.data)
                     this.paginator = response.data
                     this.words = response.data.results
                     this.current = response.data.current
+                    this.letter = 'a'
                     document.title = 'Definicje | Ściek'
                 })
 
@@ -104,13 +104,11 @@ export default {
             await axios
                 .get(`/api/v1/definitions/dict/${letter}/`)
                 .then(response => {
-                    console.log(response.data)
                     this.paginator = response.data
                     this.words = response.data.results
                     this.current = response.data.current
                     this.letter = letter
                     this.activePage = null
-                    document.title = 'Definicje | Ściek'
 
                 })
 
@@ -120,12 +118,10 @@ export default {
                 await axios
                 .get(this.paginator.previous)
                 .then(response => {
-                    console.log(response.data)
                     this.paginator = response.data
                     this.words = response.data.results
                     this.current = response.data.current
-
-                    document.title = 'Definicje | Ściek'
+                    this.activePage = this.activePage - 1 
                 })
             }
             
@@ -136,31 +132,23 @@ export default {
                 await axios
                 .get(this.paginator.next)
                 .then(response => {
-                    console.log(response.data)
-                    
                     this.paginator = response.data
                     this.words = response.data.results
                     this.pages = response.data.count
                     this.current = response.data.current
-
-                    document.title = 'Definicje | Ściek'
+                    this.activePage = this.activePage + 1 
                 })
             }
         },
         async getNumber(page, letter) {
-            http://127.0.0.1:8000/api/v1/definitions/dict/a/?page=2
-            console.log(letter)
             await axios 
             .get(`/api/v1/definitions/dict/${letter}/`, { params: { page: page } })
             .then(response => {
                 this.activePage = page
-                console.log(response.data)
                 this.paginator = response.data
                 this.words = response.data.results
                 this.pages = response.data.count
                 this.current = response.data.current
-
-                document.title = 'Definicje | Ściek'
             })
         },
         isActive(page) {
