@@ -12,7 +12,7 @@
                     </ul>
                 </div>
                 <nav aria-label="Page navigation example" class="pt-4 sm:border-t border-gray-200 sm:border-t-0 border-t">
-                        <ul class="inline-flex items-center -space-x-px">
+                        <ul class="inline-flex flex-wrap items-center -space-x-px">
                             <li>
                                 <a @click="getPrevious()"
                                     class="block text-center px-3 py-1 ml-0 leading-tight text-emerald-500 bg-gray border border-gray-300 rounded-l-lg hover:bg-emerald-700 hover:text-white">
